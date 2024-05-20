@@ -1,6 +1,16 @@
-/* import Link from 'next/link';
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
+'use client'
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import {
+  UserGroupIcon,
+  HomeIcon,
+  ShieldCheckIcon,
+  InboxStackIcon
+} from '@heroicons/react/24/outline';
 
 const links = [
   { name: 'Home', href: '/dashboard', icon: HomeIcon },
@@ -38,4 +48,4 @@ export default function NavLinks() {
       })}
     </>
   );
-} */
+}
