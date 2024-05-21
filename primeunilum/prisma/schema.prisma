@@ -18,3 +18,40 @@ model Post {
 
     @@index([name])
 }
+
+model Customer {
+    id        String   @id @default(uuid()) @map("_id")
+    email     String   @unique
+    name      String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([name, email])
+}
+
+model Product {
+    id       String @id @default(uuid()) @map("_id")
+    name     String
+    category Category
+}
+
+enum Category {
+    Aluminum
+    Glass
+}
+
+model Supplier {
+    id      String @id @default(uuid()) @map("_id")
+    name    String
+    email   String
+    contact Int
+    status  Status
+
+    @@index([email, name])
+}
+
+enum Status {
+    Active
+    Pause
+    Terminated
+}

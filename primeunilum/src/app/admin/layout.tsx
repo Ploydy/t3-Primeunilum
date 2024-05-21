@@ -1,4 +1,4 @@
-import SideNav from "../_components/sidenav";
+import SideNav from "../ui/sidenav";
 
 export default function RootLayout({
   children,

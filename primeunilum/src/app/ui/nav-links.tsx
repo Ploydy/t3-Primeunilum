@@ -13,15 +13,10 @@ import {
 } from '@heroicons/react/24/outline';
 
 const links = [
-  { name: 'Home', href: '/dashboard', icon: HomeIcon },
-  { name: 'Profle', href: '/dashboard/profile', icon: UserGroupIcon },
-  {
-    name: 'Doctors',
-    href: '/dashboard/doctors',
-    icon: ShieldCheckIcon
-
-  },
-  { name: 'Anidex', href: '/dashboard/anidex', icon: InboxStackIcon },
+  { name: 'Dashboard', href: '/admin', icon: HomeIcon },
+  { name: 'Customers', href: '/admin/customers', icon: UserGroupIcon },
+  { name: 'Suppliers', href: '/admin/suppliers', icon: ShieldCheckIcon },
+  { name: 'Stocks', href: '/admin/stocks', icon: InboxStackIcon },
 ];
 
 export default function NavLinks() {
