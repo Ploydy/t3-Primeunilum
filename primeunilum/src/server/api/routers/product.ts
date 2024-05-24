@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { ProductsTable } from "~/app/definitions/model";
+import { ProductsTable } from "~/app/lib/model";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 
