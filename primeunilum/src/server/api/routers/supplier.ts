@@ -10,7 +10,7 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const supplierRouter = createTRPCRouter({
   getAllSupplierData: publicProcedure.query( async ({ ctx }) => {
-    const customers = await ctx.db.supplier.findMany ({
+    const customers = await ctx.db.suppliers.findMany ({
       select: {
         id: true,
         name: true,

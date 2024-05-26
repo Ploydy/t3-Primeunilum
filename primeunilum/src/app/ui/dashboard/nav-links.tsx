@@ -9,12 +9,14 @@ import {
   UserGroupIcon,
   HomeIcon,
   ShieldCheckIcon,
-  InboxStackIcon
+  InboxStackIcon,
+  DocumentDuplicateIcon
 } from '@heroicons/react/24/outline';
 
 const links = [
   { name: 'Dashboard', href: '/admin', icon: HomeIcon },
   { name: 'Customers', href: '/admin/customers', icon: UserGroupIcon },
+  { name: 'Invoices', href: '/admin/invoices', icon: DocumentDuplicateIcon },
   { name: 'Suppliers', href: '/admin/suppliers', icon: ShieldCheckIcon },
   { name: 'Stocks', href: '/admin/stocks', icon: InboxStackIcon },
 ];

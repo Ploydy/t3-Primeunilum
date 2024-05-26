@@ -3,25 +3,25 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { CustomersTable } from "~/app/lib/model";
+import { Customers } from "~/app/lib/model";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 
 
 export const customerRouter = createTRPCRouter({
   getAllCustomerData: publicProcedure.query( async ({ ctx }) => {
-    const customers = await ctx.db.customer.findMany ({
+    const customers = await ctx.db.customers.findMany ({
       select: {
         id: true,
         name: true,
         email: true,
       },
     });
-    const result: CustomersTable[] = customers.map(c => ({
+    const result: Customers[] = customers.map(c => ({
       id: c.id,
       name: c.name,
       email: c.email
-    }) as CustomersTable );
+    }) as Customers );
     return result;
   }),
 });

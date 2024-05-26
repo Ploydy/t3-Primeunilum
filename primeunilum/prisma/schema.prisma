@@ -19,18 +19,19 @@ model Post {
     @@index([name])
 }
 
-model Customer {
-    id        String   @id @default(uuid()) @map("_id")
-    email     String   @unique
+model Customers {
+    id        String     @id @default(uuid()) @map("_id")
+    email     String     @unique
     name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    createdAt DateTime   @default(now())
+    updatedAt DateTime   @updatedAt
+    invoice   Invoices[]
 
     @@index([name, email])
 }
 
-model Product {
-    id       String @id @default(uuid()) @map("_id")
+model Products {
+    id       String   @id @default(uuid()) @map("_id")
     name     String
     category Category
 }
@@ -40,18 +41,29 @@ enum Category {
     Glass
 }
 
-model Supplier {
-    id      String @id @default(uuid()) @map("_id")
+model Suppliers {
+    id      String     @id @default(uuid()) @map("_id")
     name    String
     email   String
     contact Int
     status  Status
+    invoice Invoices[]
 
     @@index([email, name])
 }
 
 enum Status {
-    Active
-    Pause
-    Terminated
+    Paid
+    Pending
+}
+
+model Invoices {
+    id          String    @id @default(uuid()) @map("_id")
+    amount      Int
+    status      Status
+    date        DateTime  @db.Date
+    customer    Customers @relation(fields: [customer_id], references: [id])
+    customer_id String
+    supplier    Suppliers @relation(fields: [supplier_id], references: [id])
+    supplier_id String
 }
