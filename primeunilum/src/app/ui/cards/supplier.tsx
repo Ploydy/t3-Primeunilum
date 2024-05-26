@@ -3,7 +3,7 @@ import React from 'react'
 import { api } from '~/trpc/server';
 
 export default async function SupplierCard() {
-  const suppliers = await api.supplier.getAllSupplierData();
+  const suppliers = await api.supplier.getAllSupplier();
   return (
     <div className="h-full w-full">
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>

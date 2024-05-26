@@ -4,7 +4,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { z } from "zod";
 import { InvoicesTable } from "~/app/lib/model";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
@@ -14,23 +13,50 @@ export const invoiceRouter = createTRPCRouter({
     const invoices = await ctx.db.invoices.findMany ({
       select: {
         id: true,
-        customer: true,
-        customer_id: true,
         date: true,
         amount: true,
         status: true,
+        customer: {
+          select: {
+            name: true,
+            id: true,
+            email: true
+          }
+        }
       },
     });
     const result: InvoicesTable[] = invoices.map(i => ({
       id: i.id,
-      name: i.customer,
-      customer_id: i.customer_id,
+      name: i.customer.name,
+      email: i.customer.email,
+      customer_id: i.customer.id,
       date: i.date,
       amount: i.amount,
       status: i.status
     }) as unknown as InvoicesTable );
     return result
   }),
+
+  /* fetchInvoiceById: publicProcedure.query(async ({ ctx, }) => {
+    const data = await ctx.db.invoices.findMany({
+      select: {
+        id: true,
+        customer_id: true,
+        amount: true,
+        status: true
+      },
+      where: {
+        id 
+      }
+    })
+
+    const invoice = data.map((invoice) => ({
+      ...invoice,
+      amount:invoice.amount / 100,
+    }));
+      return invoice[0]
+
+  })} */
 
 
   /* authenticate: publicProcedure

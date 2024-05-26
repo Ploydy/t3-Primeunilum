@@ -19,7 +19,7 @@ export type Invoice = {
   customer_id: string;
   amount: number;
   date: string;
-  status: 'pending' | 'paid';
+  status: string;
 };
 
 export type Revenue = {
@@ -35,7 +35,7 @@ export type InvoicesTable = {
   image_url: string;
   date: string;
   amount: number;
-  status: 'pending' | 'paid';
+  status: string;
 };
 
 export type LatestInvoice = {

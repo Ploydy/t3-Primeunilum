@@ -1,9 +1,9 @@
 import React from 'react'
 
-function EditForm() {
+function Form() {
   return (
     <div>EditForm</div>
   )
 }
 
-export default EditForm
+export default Form
