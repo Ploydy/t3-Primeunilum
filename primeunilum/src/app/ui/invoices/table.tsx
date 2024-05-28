@@ -6,21 +6,16 @@
 import { UpdateInvoice, DeleteInvoice  } from '../invoices/buttons';
 import InvoiceStatus from '../../ui/invoices/status';
 import { formatDateToLocal, formatCurrency } from '../../lib/utils';
-/* 
-import { fetchFilteredInvoices } from '@/app/lib/data'; 
-*/
 import { api } from '~/trpc/server';
 
-export default async function InvoicesTable(/* {
+export default async function InvoicesTable({
   query,
   currentPage,
 }: {
-  query: string;
+  query: string
   currentPage: number;
-} */) {
-  /* const invoices = await fetchFilteredInvoices(query, currentPage); */
+}) {
   const invoices = await api.invoice.getAllInvoices();
-  console.log(invoices)
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
@@ -45,7 +40,7 @@ export default async function InvoicesTable(/* {
                     <p className="text-xl font-medium">
                       {formatCurrency(invoice.amount)}
                     </p>
-                    <p>{formatDateToLocal(invoice.date)}</p>
+                    <p>{formatDateToLocal(invoice.date as unknown as string)}</p>
                   </div>
                   <div className="flex justify-end gap-2">
                     <UpdateInvoice id={invoice.id} />
@@ -96,7 +91,7 @@ export default async function InvoicesTable(/* {
                     {formatCurrency(invoice.amount)}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {formatDateToLocal(invoice.date)}
+                    {formatDateToLocal(invoice.date as unknown as string)}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     <InvoiceStatus status={invoice.status} />

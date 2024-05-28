@@ -36,7 +36,7 @@ export const invoiceRouter = createTRPCRouter({
     }) as unknown as InvoicesTable );
     return result
   }),
-
+});
   /* fetchInvoiceById: publicProcedure.query(async ({ ctx, }) => {
     const data = await ctx.db.invoices.findMany({
       select: {
@@ -84,4 +84,4 @@ export const invoiceRouter = createTRPCRouter({
       },
   }),
  */
-});
+

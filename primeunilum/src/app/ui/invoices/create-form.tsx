@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 'use client';
 
-import { CustomersTable } from '../../lib/model';
+import { CustomerField } from '../../lib/model';
 import Link from 'next/link';
 import {
   CheckIcon,
@@ -12,33 +12,17 @@ import {
 } from '@heroicons/react/24/outline';
 import { Button } from '../button';
 /* import { createInvoice } from '@/app/lib/actions'; */
-import { useForm, Resolver } from "react-hook-form"
+import { useForm } from "react-hook-form"
 
-
-
-/* const resolver: Resolver<CustomersTable> = async (values) => {
-  return {
-    values: values. ? values : {},
-    errors: !values.firstName
-      ? {
-          firstName: {
-            type: "required",
-            message: "This is required.",
-          },
-        }
-      : {},
-  }
-} */
-
-export default function Form({ customers }: { customers: CustomersTable[] }) {
-/*   const {
+export default function Form({ customers }: { customers: CustomerField[] }) {
+  const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<CustomersTable>({ resolver })
- */
+  } = useForm<CustomerField>()
+
   return (
-    <form >
+    <form action='POST'>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
@@ -48,10 +32,9 @@ export default function Form({ customers }: { customers: CustomersTable[] }) {
           <div className="relative">
             <select
               id="customer"
-              name="customerId"
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-              defaultValue=""
-              aria-describedby="customer-error"
+              required
+              {...register('name')}
             >
               <option value="" disabled>
                 Select a customer
@@ -63,14 +46,6 @@ export default function Form({ customers }: { customers: CustomersTable[] }) {
               ))}
             </select>
             <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
-          </div>
-          <div id="customer-error" aria-live="polite" aria-atomic="true">
-            {/* {state.errors?.customerId &&
-              state.errors.customerId.map((error: string) => (
-                <p className="mt-2 text-sm text-red-500" key={error}>
-                  {error}
-                </p>
-              ))} */}
           </div>
         </div>
 
@@ -88,6 +63,7 @@ export default function Form({ customers }: { customers: CustomersTable[] }) {
                 step="0.01"
                 placeholder="Enter USD amount"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                
               />
               <CurrencyDollarIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
@@ -137,7 +113,7 @@ export default function Form({ customers }: { customers: CustomersTable[] }) {
       </div>
       <div className="mt-6 flex justify-end gap-4">
         <Link
-          href="/dashboard/invoices"
+          href="/admin/invoices"
           className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
         >
           Cancel

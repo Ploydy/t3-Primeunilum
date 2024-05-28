@@ -1,29 +1,28 @@
-/* import Pagination from '../../ui/invoices/pagination'; */
-/* import { fetchInvoicesPages } from '@/app/lib/data'; */
+import Pagination from '../../ui/invoices/pagination';
 import Search from '../../ui/search';
 import Table from '../../ui/invoices/table';
 import { CreateInvoice } from '../../ui/invoices/buttons';
 import { Suspense } from 'react';
 import { InvoicesTableSkeleton } from '~/app/ui/skeletons';
 import { type Metadata } from 'next';
+import { api } from '~/trpc/server';
 
 export const metadata: Metadata = {
   title: 'Invoices',
 };
 
-export default async function Invoice(/* {
-    searchParams,
-  }: {
-    searchParams?: {
-      query?: string;
-      page?: string;
-    };
-  } */) {
-  /* const query = searchParams?.query ??  ''; */
-  /* const currentPage = Number(searchParams?.page) || 1; */
-
-  /* const totalPages = await fetchInvoicesPages(query); */
-
+export default async function Invoice({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
+  const query = searchParams?.query ?? '';
+  const currentPage = Number(searchParams?.page) || 1;
+  /* const totalPages = await api.data.fetchInvoicesPages(query); */
+ /*  console.log(totalPages) */
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-between">
@@ -35,8 +34,8 @@ export default async function Invoice(/* {
         </Suspense>
         <CreateInvoice />
       </div>
-      <Suspense /* key={query + currentPage} */ fallback={<InvoicesTableSkeleton />}>
-        <Table /* query={query} currentPage={currentPage} */ />
+      <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
+        <Table query={query} currentPage={currentPage} />
       </Suspense>
       <div className="mt-5 flex w-full justify-center">
         {/* <Pagination totalPages={totalPages} /> */}
