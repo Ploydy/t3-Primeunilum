@@ -60,6 +60,13 @@ async function CrudShowcase() {
       )}
 
       <CreatePost />
+      <Link href='/admin'>
+      <button
+        className="rounded-full bg-slate-500/80 px-24 py-3 my-2 font-semibold transition hover:bg-white/20 "
+        >
+        System Login
+      </button>
+        </Link>
     </div>
   );
 }

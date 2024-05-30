@@ -1,15 +1,17 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
+import { z } from "zod";
 import { InvoicesTable } from "~/app/lib/model";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const invoiceRouter = createTRPCRouter({
 
-  getAllInvoices: publicProcedure.query(async ({ ctx }) => {
+  fetchAllInvoices: publicProcedure.query(async ({ ctx }) => {
     const invoices = await ctx.db.invoices.findMany ({
       select: {
         id: true,
@@ -36,6 +38,26 @@ export const invoiceRouter = createTRPCRouter({
     }) as unknown as InvoicesTable );
     return result
   }),
+
+  /*  createInvoice: publicProcedure
+  .input(z.object({
+     name: z.string().min(1),
+      amount: z.number(),
+     status: z.string(),
+     date: z.date() 
+    }))
+  .mutation(async ({ctx, input }) => {
+    
+    return ctx.db.invoices.create({
+      data: {
+        name: input.name,
+        /* amount: input.amount,
+        status: input.status,
+        date: input.date 
+      },
+    });
+  }), */ 
+
 });
   /* fetchInvoiceById: publicProcedure.query(async ({ ctx, }) => {
     const data = await ctx.db.invoices.findMany({
