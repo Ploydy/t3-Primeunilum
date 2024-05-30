@@ -15,7 +15,7 @@ export default async function InvoicesTable({
   query: string
   currentPage: number;
 }) {
-  const invoices = await api.invoice.getAllInvoices();
+  const invoices = await api.invoice.fetchAllInvoices();
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">

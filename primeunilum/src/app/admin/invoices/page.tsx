@@ -1,11 +1,11 @@
-import Pagination from '../../ui/invoices/pagination';
+/* import Pagination from '../../ui/invoices/pagination'; */
 import Search from '../../ui/search';
-import Table from '../../ui/invoices/table';
+import InvoiceTable from '../../ui/invoices/table';
 import { CreateInvoice } from '../../ui/invoices/buttons';
 import { Suspense } from 'react';
 import { InvoicesTableSkeleton } from '~/app/ui/skeletons';
 import { type Metadata } from 'next';
-import { api } from '~/trpc/server';
+/* import { api } from '~/trpc/server'; */
 
 export const metadata: Metadata = {
   title: 'Invoices',
@@ -35,7 +35,7 @@ export default async function Invoice({
         <CreateInvoice />
       </div>
       <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
-        <Table query={query} currentPage={currentPage} />
+        <InvoiceTable query={query} currentPage={currentPage} />
       </Suspense>
       <div className="mt-5 flex w-full justify-center">
         {/* <Pagination totalPages={totalPages} /> */}
