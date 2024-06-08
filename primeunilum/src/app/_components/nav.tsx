@@ -20,7 +20,6 @@ export default function Nav() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [selectedItem, setSelectedItem] = useState("/");
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   return (
     <div
       className={`${theme === "dark" ? "bg-[#121212]" : "bg-white text-black"
@@ -59,23 +58,23 @@ export default function Nav() {
             ))}
             <div className="md:hidden mx-auto absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-3">
               <Link
-                href="https://www.facebook.com/profile.php?id=100017192357822&sk"
+                href="https://www.facebook.com/LawrenceCarballo"
                 target="_blank"
               >
                 <FacebookOutlinedIcon className="cursor-pointer hover:text-rose-600 text-xl" />
               </Link>
-              <Link
-                target="_blank"
-                href={"https://www.linkedin.com/in/naseem-khan-275275258/"}
-              >
-                <LinkedInIcon className="cursor-pointer hover:text-rose-600 text-xl" />
-              </Link>
-              <Link target="_blank" href={"https://github.com/NaseemKhan005/"}>
+              <Link target="_blank" href={"https://github.com/Ploydy"}>
                 <GitHubIcon className="cursor-pointer hover:text-rose-600 text-xl" />
               </Link>
               <Link
                 target="_blank"
-                href={"https://www.instagram.com/naseem_khan005/"}
+                href={"https://www.linkedin.com/in/ploydy/"}
+              >
+                <LinkedInIcon className="cursor-pointer hover:text-rose-600 text-xl" />
+              </Link>
+              <Link
+                target="_blank"
+                href={"#"}
               >
                 <InstagramIcon className="cursor-pointer hover:text-rose-600 text-xl" />
               </Link>

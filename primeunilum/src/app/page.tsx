@@ -1,17 +1,46 @@
-import Link from "next/link";
-export default async function Home() {
+import Community from "./_components/community";
+import CoreFeatures from "./_components/corefeat";
+import Features from "./_components/features";
+import HeroSection from "./_components/hero-section";
+import Nav from "./_components/nav";
+import Pricing from "./_components/pricing";
+import QualityFeatures from "./_components/qualityfeat";
+import Services from "./_components/services";
+import Subscribe from "./_components/subscribe";
+import Team from "./_components/team";
+import Testimonials from "./_components/testimonials";
+import Work from "./_components/work";
 
+export default async function Home() {
   return (
-    
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <Link href='/login'>
-      <button
-        className="rounded-full bg-slate-500/80 px-24 py-3 my-2 font-semibold transition hover:bg-white/20 "
-        >
-        Login
-      </button>
-        </Link>
-    </main>
+    <div className="mx-6"> 
+
+      <div>
+        <Nav />
+      </div>
+
+      <div>
+        <HeroSection />
+      </div>
+
+      <div>
+        <Features />
+      </div>
+
+      <div>
+        <Services />
+      </div>
+
+      <QualityFeatures />
+      <CoreFeatures />
+      <Work />
+      <Pricing />
+      <Team />
+      <Testimonials />
+      <Subscribe />
+      <Community />
+    </div>
+
   );
 }
 
