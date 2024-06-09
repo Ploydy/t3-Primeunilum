@@ -13,24 +13,11 @@ import Work from "./_components/work";
 
 export default async function Home() {
   return (
-    <div className="mx-6"> 
-
-      <div>
-        <Nav />
-      </div>
-
-      <div>
-        <HeroSection />
-      </div>
-
-      <div>
-        <Features />
-      </div>
-
-      <div>
-        <Services />
-      </div>
-
+    <div className="flex flex-col gap-16 md:gap-32">
+      <Nav />
+      <HeroSection />
+      <Features />
+      <Services />
       <QualityFeatures />
       <CoreFeatures />
       <Work />
@@ -40,7 +27,6 @@ export default async function Home() {
       <Subscribe />
       <Community />
     </div>
-
   );
 }
 

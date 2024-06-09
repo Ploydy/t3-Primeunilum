@@ -30,7 +30,7 @@ const Card = ({ star, title, imgSrc }: any) => {
         <div>
           <h3 className="font-semibold">Naseem Khan</h3>
           <Link
-            href="https://github.com/NaseemKhan005"
+            href="https://github.com/ploydy"
             target="_blank"
             className="text-rose-600 font-[500]"
           >
