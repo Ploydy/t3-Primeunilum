@@ -28,13 +28,13 @@ const Card = ({ star, title, imgSrc }: any) => {
       <div className="flex items-center gap-4 mt-5">
         <Image src={imgSrc} width={50} height={50} alt="testimonials" />
         <div>
-          <h3 className="font-semibold">Naseem Khan</h3>
+          <h3 className="font-semibold">Lawrence Carballo</h3>
           <Link
             href="https://github.com/ploydy"
             target="_blank"
             className="text-rose-600 font-[500]"
           >
-            @naseemkhan
+            @Ploydy
           </Link>
         </div>
       </div>
