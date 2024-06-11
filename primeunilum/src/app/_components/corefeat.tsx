@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const CoreFeatures = () => {
   return (
@@ -14,13 +15,15 @@ const CoreFeatures = () => {
           Get your tests delivered at let home collect sample from the victory
           of the managements that supplies best design system guidelines ever.
         </p>
-        <button className="mt-5 w-fit md:text-base text-sm hover:border-2 border-2 border-transparent font-semibold py-3 px-8 md:px-10 text-white bg-rose-600 hover:border-rose-600 hover:bg-rose-600 hover:shadow-rose-600 hover:shadow-2xl rounded-full">
-          Explore
-        </button>
+        <Link href='/register'>
+          <button className="mt-5 w-fit md:text-base text-sm hover:border-2 border-2 border-transparent font-semibold py-3 px-8 md:px-10 text-white bg-rose-600 hover:border-rose-600 hover:bg-rose-600 hover:shadow-rose-600 hover:shadow-2xl rounded-full">
+            Explore
+          </button>
+        </Link>
       </div>
 
       <div className="flex-1 relative w-full">
-        <div className="md:before:w-full md:before:h-full md:before:absolute md:before:-bottom-24 lg:before:-bottom-20 xl:before:-right-5 lg:before:-right-12 md:before:-right-16 md:before:bg-right-bottom md:before:bg-contain md:before:bg-no-repeat before:-z-50 before:bg-none md:before:bg-[url('/videobg.png')]">
+        <div className="md:before:w-full md:before:h-full md:before:absolute md:before:-bottom-24 lg:before:-bottom-20 xl:before:-right-5 lg:before:-right-12 md:before:-right-16 md:before:bg-right-bottom md:before:bg-contain md:before:bg-no-repeat before:-z-50 before:bg-none">
           <Image
             src={"/features/core-features.png"}
             width={300}

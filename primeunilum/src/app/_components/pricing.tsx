@@ -6,8 +6,9 @@ import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ButtonGroup from "./buttongroup";
+import Link from "next/link";
 
-const Plan = ({ title }:any) => {
+const Plan = ({ title }: any) => {
   return (
     <div className="flex items-center gap-2">
       <CheckCircleIcon className="text-rose-600 text-xl" />
@@ -36,9 +37,11 @@ const PricingCard = ({ name, title, price, btnText, trail }: any) => {
             /Monthly
           </span>
         </h2>
-        <button className="w-fit capitalize text-base hover:bg-rose-600 hover:shadow-md hover:shadow-rose-600 hover:border-2 border-2 border-transparent py-3 px-6 text-white bg-rose-600 hover:border-rose-600 hover:text-white rounded-full">
-          {btnText}
-        </button>
+        <Link href='/register'>
+          <button className="w-fit capitalize text-base hover:bg-rose-600 hover:shadow-md hover:shadow-rose-600 hover:border-2 border-2 border-transparent py-3 px-6 text-white bg-rose-600 hover:border-rose-600 hover:text-white rounded-full">
+            {btnText}
+          </button>
+        </Link>
         <span className="block text-rose-600 mt-5 font-semibold animate-bounce cursor-pointer">
           {trail}
         </span>
@@ -61,9 +64,8 @@ const Pricing = () => {
 
       <div className="relative transition-all flex gap-1 mx-auto w-fit bg-slate-100 p-2 rounded-full">
         <div
-          className={`${
-            plan === "Monthly Plan" ? "left-2" : "left-[150px] w-[128px]"
-          } transition-all duration-500 absolute top-[.37rem] h-[55px] w-[138px] rounded-full bg-rose-600`}
+          className={`${plan === "Monthly Plan" ? "left-2" : "left-[150px] w-[128px]"
+            } transition-all duration-500 absolute top-[.37rem] h-[55px] w-[138px] rounded-full bg-rose-600`}
         ></div>
         <button
           onClick={() => setPlan("Monthly Plan")}
