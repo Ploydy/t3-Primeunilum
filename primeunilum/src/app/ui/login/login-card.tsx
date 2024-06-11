@@ -68,14 +68,26 @@ export default function LoginCard() {
             Register here
           </a>
         </p>
-        <Link href='/admin'>
-          <button
-            type="submit"
-            className="flex w-full justify-center rounded-md px-3 py-10 text-sm font-semibold leading-6 text-black "
-          >
-            System Sign in
-          </button>
-        </Link>
+
+        <div className='py-20'>
+          <Link href='/admin'>
+            <button
+              type="submit"
+              className="flex w-full justify-center rounded-md px-3 text-sm font-semibold leading-6 text-black "
+            >
+              System Sign in
+            </button>
+          </Link>
+
+          <Link href='/customer'>
+            <button
+              type="submit"
+              className="flex w-full justify-center rounded-md px-3 text-sm font-semibold leading-6 text-black "
+            >
+              Customer Sign in
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   )
