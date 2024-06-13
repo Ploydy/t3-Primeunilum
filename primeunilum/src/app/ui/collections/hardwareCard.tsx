@@ -53,6 +53,8 @@ export default function HardwareCard() {
                 <p className="mt-1 text-lg font-medium float-end mr-4 bg-transparent text-gray-900">{product.price}</p>
               </div>
               <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
+              <button className='w-full px-6 py-2 my-4 bg-slate-200/50 hover:bg-slate-300/40'>Checkout</button>
+              <button className='w-full px-6 py-2 bg-slate-100/50 hover:bg-slate-200/40'>View Product</button>
 
             </a>
           ))}
