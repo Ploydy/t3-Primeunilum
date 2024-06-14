@@ -3,6 +3,8 @@ import HardwareCard from '~/app/ui/collections/hardwareCard'
 
 export default function Hardware() {
   return (
-    <div ><HardwareCard /></div>
+    <div>
+      <HardwareCard />
+      </div>
   )
 }
