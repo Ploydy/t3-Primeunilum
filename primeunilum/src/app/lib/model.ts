@@ -86,6 +86,9 @@ export type InvoiceForm = {
 export type ProductsTable = {
   id: string;
   name: string;
+  brandname?: string,
+  price: number,
+  reviews?: number,
   category: string;
 }
 

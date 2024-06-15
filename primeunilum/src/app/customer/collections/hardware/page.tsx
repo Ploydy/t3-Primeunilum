@@ -5,6 +5,6 @@ export default function Hardware() {
   return (
     <div>
       <HardwareCard />
-      </div>
+    </div>
   )
 }

@@ -9,17 +9,23 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 
 export const productRouter = createTRPCRouter({
-  getAllProductsData: publicProcedure.query( async ({ ctx }) => {
+  getProducts: publicProcedure.query( async ({ ctx }) => {
     const products = await ctx.db.products.findMany ({
       select: {
         id: true,
+        brandname: true,
         name: true,
+        price: true,
+        reviews: true,
         category: true,
       },
     });
     const result: ProductsTable[] = products.map(p => ({
       id: p.id,
       name: p.name,
+      brandname: p.brandname,
+      price: p.price,
+      reviews: p.reviews,
       category: p.category
     }) as unknown as ProductsTable );
     return result;

@@ -6,18 +6,9 @@ generator client {
 }
 
 datasource db {
-    provider = "mongodb"
-    url      = env("DATABASE_URL")
+    provider     = "mongodb"
+    url          = env("DATABASE_URL")
     relationMode = "prisma"
-}
-
-model Post {
-    id        String   @id @default(uuid()) @map("_id")
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    @@index([name])
 }
 
 model Customers {
@@ -27,23 +18,29 @@ model Customers {
     createdAt DateTime   @default(now())
     updatedAt DateTime   @updatedAt
     invoice   Invoices[]
-
-    @@index([name, email])
 }
 
 model Products {
-    id       String   @id @default(uuid()) @map("_id")
-    name     String
-    category Category
+    id        String   @id @default(uuid()) @map("_id")
+    brandname String?
+    name      String
+    price     Int
+    reviews   Int?
+    category  Category
 }
 
 enum Category {
-    Aluminum
-    Glass
+    Hardware
+    Appliance
+    Automotive
+    Houseimprovement
+    Housewares
+    Petsupplies
+    Sportgoods
 }
 
 model Suppliers {
-    id      String     @id @default(uuid()) @map("_id")
+    id      String @id @default(uuid()) @map("_id")
     name    String
     email   String
     contact Int

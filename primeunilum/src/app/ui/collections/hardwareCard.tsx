@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+
 import React from 'react'
 import Image from "next/image";
 import HardwareIMG from '../../../../public/hardware/hardware.jpg'
@@ -44,12 +44,12 @@ export default async function HardwareCard() {
       <Image
         src={HardwareIMG}
         width={1400}
-        height={100}
+        height={100}  
         alt="hardware image"
         className="mx-auto"
       />
       <h2 className="font-bold text-2xl px-4 py-2">Hardware</h2>
-      <div className="flex font-bold text-2xl px-4 py-2">{/* toolbars  */}item per page
+      <div className="flex text-2xl px-4 py-2">{/* toolbars  */}item per page
         <div className='flex flex-col'>
           columns
         </div>
