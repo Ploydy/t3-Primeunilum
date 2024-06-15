@@ -1,7 +1,8 @@
 import React from 'react'
+import ApplianceCard from '~/app/ui/collections/applianceCard'
 
 export default function Appliance() {
   return (
-    <div>Appliance</div>
+    <div><ApplianceCard /></div>
   )
 }
