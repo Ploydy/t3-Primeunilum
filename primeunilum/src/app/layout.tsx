@@ -3,8 +3,7 @@ import "~/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 
 import { TRPCReactProvider } from "~/trpc/react";
-import Nav from "./_components/nav";
-import Footer from "./_components/footer";
+import Footer from "./ui/landingpage/footer";
 
 export const metadata = {
   title: "Create T3 App",

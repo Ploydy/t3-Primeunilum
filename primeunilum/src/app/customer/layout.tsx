@@ -1,7 +1,7 @@
 import Filter from "../ui/customers/filter";
 import Header from "../ui/customers/header";
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: {
   children: React.ReactNode;

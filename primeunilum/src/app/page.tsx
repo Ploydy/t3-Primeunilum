@@ -1,15 +1,15 @@
-import Community from "./_components/community";
-import CoreFeatures from "./_components/corefeat";
-import Features from "./_components/features";
-import HeroSection from "./_components/hero-section";
-import Nav from "./_components/nav";
-import Pricing from "./_components/pricing";
-import QualityFeatures from "./_components/qualityfeat";
-import Services from "./_components/services";
-import Subscribe from "./_components/subscribe";
-import Team from "./_components/team";
-import Testimonials from "./_components/testimonials";
-import Work from "./_components/work";
+import Community from "./ui/landingpage/community";
+import CoreFeatures from "./ui/landingpage/corefeat";
+import Features from "./ui/landingpage/features";
+import HeroSection from "./ui/landingpage/hero-section";
+import Nav from "./ui/landingpage/nav";
+import Pricing from "./ui/landingpage/pricing";
+import QualityFeatures from "./ui/landingpage/qualityfeat";
+import Services from "./ui/landingpage/services";
+import Subscribe from "./ui/landingpage/subscribe";
+import Team from "./ui/landingpage/team";
+import Testimonials from "./ui/landingpage/testimonials";
+import Work from "./ui/landingpage/work";
 
 export default async function Home() {
   return (
