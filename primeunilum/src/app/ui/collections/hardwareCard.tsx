@@ -45,29 +45,48 @@ export default async function HardwareCard() {
     ] */
 
   const Products = await api.product.getProducts();
-  const HardwareProducts = Products.filter(product => product.category === 'Hardware')
+  const hardwares = Products.filter(product => product.category === 'Hardware')
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-2 sm:px-6 sm:py-8 lg:max-w-7xl lg:px-8">
-      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-        {HardwareProducts.map((product) => (
-          <a key={product.id} className="group">
-            <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-              <Image
-                src={Aluminum}
-                alt=''
-                className="h-full w-full object-cover object-center group-hover:opacity-75"
-              />
-              <div className="mt-1 text-lg font-medium float-end mr-4 bg-transparent text-gray-900">{product.price}</div>
+    <div>
+      {hardwares.map((hardware) => (
+        <div key={hardware.id}>
+          <li className="relative flex flex-row items-start border-2 rounded p-2 mt-2">
+
+            <Image src={Aluminum} alt="" className="p-4 ml-10 flex-shrink-0 shadow-lg rounded w-full sm:w-[10rem] xl:mb-2" width="1280" height="200" />
+
+            <div className='flex flex-col justify-between mt-10'>
+              <div className="sm:ml-6 xl:ml-6">
+                <h3 className="mb-1 text-slate-900 font-mono">
+                  <span className="mb-1 block text-sm leading-6 text-slate-600">{hardware.brandname}</span><Link href={`/customer/collections/hardware/${hardware.name}`}>
+                    {hardware.name}</Link>
+                </h3>
+                <div className="prose prose-slate prose-sm text-slate-600">
+                  <p>P {hardware.price} PHP</p>
+                </div>
+                <p className='text-sm'>***** {hardware.reviews} we got reviews</p>
+              </div>
+
             </div>
-            <h3 className="mt-2 capitalize font-semibold text-md text-gray-700"><Link href={`/customer/collections/hardware/${product.brandname}`}>{product.brandname}</Link></h3>
-            <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
-            <h3 className="mt-4 text-sm text-gray-700">{product.reviews} we got reviews</h3>
-            <button className='w-full px-6 py-2 my-2 bg-slate-200/50 hover:bg-slate-300/40'>Checkout</button>
-            <button className='w-full px-6 py-2 bg-slate-100/50 hover:bg-slate-200/40'>View Product</button>
-          </a>
-        ))}
-      </div>
-    </div>
+
+            <div className='flex flex-col items-center transition-all ml-auto ' >
+              <Link href='/customer/cart'>
+                <button
+                  className="mt-10 group inline-flex items-center rounded text-md font-semibold whitespace-nowrap px-5 py-2 focus:outline-none focus:ring-2 bg-slate-200 text-slate-900 hover:bg-slate-300 focus:ring-slate-500">
+                  Add to cart
+                </button>
+              </Link>
+
+
+              <button
+                className="my-2 group inline-flex items-center rounded text-md font-semibold whitespace-nowrap px-5 py-2 focus:outline-none focus:ring-2 bg-slate-200 text-slate-900 hover:bg-slate-300 focus:ring-slate-500">
+                Quick view
+              </button>
+            </div>
+
+          </li>
+        </div>))}
+
+    </div >
   )
 }

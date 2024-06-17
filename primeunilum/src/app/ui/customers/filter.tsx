@@ -2,13 +2,13 @@ import React from 'react'
 
 export default function Filter() {
   return (
-    <div className='p-4 font-bold h-52 bg-white'>
+    <div className='p-6 font-bold h-48 bg-white'>
       <div className='text-xl'>
         Filters
       </div>
-      <div className='my-8'>
-        Avalability
-        <div>
+      <div className='my-10'>
+        Availability
+        <div className='mt-8'>
           Price
         </div>
       </div>

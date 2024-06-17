@@ -11,10 +11,10 @@ export default function Layout({
       <div className="my-2">
         <Header />
       </div>
-      <div className="w-full flex-none my-20 rounded md:w-64">
+      <div className="w-full flex-none mt-40 ml-20 mr-8 rounded md:w-64">
         <Filter />
       </div>
-      <div className="flex-grow rounded mx-0.5 my-20 md:overflow-y-auto bg-slate-100 ">
+      <div className="flex-grow rounded mx-0.5 mt-40 md:overflow-y-auto bg-slate-100 mr-20 ">
         {children}
       </div>
     </div>
