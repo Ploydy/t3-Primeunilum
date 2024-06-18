@@ -4,7 +4,7 @@ import { CardsSkeleton } from '~/app/ui/skeletons'
 
 export default function Appliance() {
   return (
-    <div className='bg-white'>
+    <div className='bg-white shadow-md'>
       <h1 className='font-bold text-3xl pl-6 pt-4 mb-20' >
         Appliances
       </h1>

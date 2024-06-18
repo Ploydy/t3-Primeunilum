@@ -17,6 +17,7 @@ export const productRouter = createTRPCRouter({
         name: true,
         price: true,
         reviews: true,
+        quantity: true,
         category: true,
       },
     });
@@ -26,6 +27,7 @@ export const productRouter = createTRPCRouter({
       brandname: p.brandname,
       price: p.price,
       reviews: p.reviews,
+      quantity: p.quantity,
       category: p.category
     }) as unknown as ProductsTable );
     return result;

@@ -26,6 +26,7 @@ model Products {
     name      String
     price     Int
     reviews   Int?
+    quantity  Int
     category  Category
 }
 

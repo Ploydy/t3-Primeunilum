@@ -89,6 +89,7 @@ export type ProductsTable = {
   brandname?: string,
   price: number,
   reviews?: number,
+  quantity: number,
   category: string;
 }
 
