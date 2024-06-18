@@ -49,8 +49,8 @@ export default async function HardwareCard() {
 
   return (
     <div>
-      {hardwares.map((hardware) => (
-        <div key={hardware.id}>
+      {hardwares.map((product) => (
+        <div key={product.id}>
           <li className="relative flex flex-row items-start border-2 rounded p-2 mt-2">
 
             <Image src={Aluminum} alt="" className="p-4 ml-10 flex-shrink-0 shadow-lg rounded w-full sm:w-[10rem] xl:mb-2" width="1280" height="200" />
@@ -58,13 +58,13 @@ export default async function HardwareCard() {
             <div className='flex flex-col justify-between mt-5'>
               <div className="sm:ml-6 xl:ml-6">
                 <h3 className="mb-1 text-slate-900 font-mono">
-                  <span className="mb-1 block text-sm leading-6 text-slate-600">{hardware.brandname}</span><Link href={`/customer/collections/hardware/${hardware.name}`}>
-                    {hardware.name}</Link>
+                  <span className="mb-1 block text-sm leading-6 text-slate-600">{product.brandname}</span><Link href={`/customer/collections/hardware/${product.name}`}>
+                    {product.name}</Link>
                 </h3>
                 <div className="prose prose-slate prose-sm text-slate-600">
-                  <p>P {hardware.price} PHP</p>
+                  <p>P {product.price} PHP</p>
                 </div>
-                <p className='text-sm'>***** {hardware.reviews} we got reviews</p>
+                <p className='text-sm'>***** {product.reviews} we got reviews</p>
               </div>
 
             </div>
