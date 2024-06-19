@@ -15,6 +15,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import Cart from "~/app/customer/cart/page";
 
 export default function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -83,8 +84,9 @@ export default function Header() {
           </button>
 
           <button className="text-lg font-semibold sm:py-3 py-2 px-3 sm:px-6 hover:text-white">
-            <Link href='/cart'><span className="text-rose-600">C</span>art</Link>
+            {/* <Link href='/cart'><span className="text-rose-600">C</span>art</Link> */}
             <ShoppingCartTwoToneIcon />
+            <Cart />
           </button>
 
           {/* <button>

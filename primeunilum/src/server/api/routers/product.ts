@@ -32,4 +32,13 @@ export const productRouter = createTRPCRouter({
     }) as unknown as ProductsTable );
     return result;
   }),
+
+/*   getProductbyName: publicProcedure.query(async ({ ctx }) => {
+    const products = await ctx.db.products.findFirstOrThrow({
+      select: {
+        name: true
+      }
+    })
+  })
+ */
 });

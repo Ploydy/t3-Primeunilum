@@ -1,14 +1,14 @@
 import React from 'react'
 import { api } from '~/trpc/server'
 import Image from 'next/image'
-import { formatCurrency } from '~/app/lib/utils'
+import { formatPrice } from '~/app/lib/utils'
 import { DeleteProduct, UpdateProduct } from './buttons'
 
 export default async function ProductTable() {
   const products = await api.product.getProducts()
   return (
-    <section className="container mx-auto p-6 font-mono">
-      <div className="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+    <section className="container mx-auto font-mono">
+      <div className="w-full mb-8 overflow-x-hidden rounded-lg shadow-lg">
         <div className="w-full overflow-x-auto">
           <table className="w-full">
             <thead>
@@ -39,7 +39,7 @@ export default async function ProductTable() {
                   </td>
                   <td className="px-4 py-3 text-sm font-semibold border">{product.brandname}</td>
                   <td className="px-4 py-3 text-xs border">
-                    <span className="px-2 py-1 font-semibold leading-tight bg-green-100 rounded-sm"> {(product.price)} PHP</span>
+                    <span className="px-2 py-1 font-semibold leading-tight bg-green-100 rounded-sm"> {formatPrice(product.price)}</span>
                   </td>
                   <td className="px-4 py-3 text-sm border">{product.quantity}</td>
                   <td className="px-4 py-3 text-sm border">{product.reviews}</td>
