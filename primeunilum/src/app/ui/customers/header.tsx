@@ -87,6 +87,7 @@ export default function Header() {
             {/* <Link href='/cart'><span className="text-rose-600">C</span>art</Link> */}
             <ShoppingCartTwoToneIcon />
             <Cart />
+            <span className="text-sm absolute top-5 rounded-full px-2 py-0.5 bg-red-500">2</span>
           </button>
 
           {/* <button>
