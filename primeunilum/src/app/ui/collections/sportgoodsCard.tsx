@@ -21,7 +21,7 @@ export default async function SportGoodsCard() {
             <div className='flex flex-col justify-between mt-5'>
               <div className="sm:ml-6 xl:ml-6">
                 <h3 className="mb-1 text-slate-900 font-mono">
-                  <span className="mb-1 block text-sm leading-6 text-slate-600">{product.brandname}</span><Link href={`/customer/collections/hardware/${product.name}`}>
+                  <span className="mb-1 block text-sm leading-6 text-slate-600">{product.brandname}</span><Link href={`/customer/products/${product.name}`}>
                     {product.name}</Link>
                 </h3>
                 <div className="prose prose-slate prose-sm text-slate-600">

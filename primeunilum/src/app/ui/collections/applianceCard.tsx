@@ -11,8 +11,8 @@ export default async function ApplianceCard() {
   const appliances = products.filter(product => product.category === 'Appliance')
   return (
 <div>
-      {appliances.map((appliance) => (
-        <div key={appliance.id}>
+      {appliances.map((product) => (
+        <div key={product.id}>
           <li className="relative flex flex-row items-start border-2 rounded p-2 mt-2">
 
             <Image src={hanabishi} alt="" className="p-4 ml-10 flex-shrink-0 shadow-lg rounded w-full sm:w-[10rem] xl:mb-2" width="1280" height="200" />
@@ -20,13 +20,13 @@ export default async function ApplianceCard() {
             <div className='flex flex-col justify-between mt-5'>
               <div className="sm:ml-6 xl:ml-6">
                 <h3 className="mb-1 text-slate-900 font-mono">
-                  <span className="mb-1 block text-sm leading-6 text-slate-600">{appliance.brandname}</span><Link href={`/customer/collections/hardware/${appliance.name}`}>
-                    {appliance.name}</Link>
+                  <span className="mb-1 block text-sm leading-6 text-slate-600">{product.brandname}</span><Link href={`/customer/products/${product.name}`}>
+                    {product.name}</Link>
                 </h3>
                 <div className="prose prose-slate prose-sm text-slate-600">
-                  <p>P {appliance.price} PHP</p>
+                  <p>P {product.price} PHP</p>
                 </div>
-                <p className='text-sm'>***** {appliance.reviews} we got reviews</p>
+                <p className='text-sm'>***** {product.reviews} we got reviews</p>
               </div>
 
             </div>
