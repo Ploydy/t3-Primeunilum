@@ -19,13 +19,13 @@ export default function Cart() {
           className='h-6 w-6 flex-shrink-0 text-gray-500 group-hover:text-gray-600'
         />
         <span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
-          0
+          {itemCount}
         </span>
       </SheetTrigger>
       <SheetContent className='flex w-full flex-col pr-0 sm:max-w-lg'>
         <SheetHeader className='space-y-2.5 pr-6'>
           <SheetTitle>
-            Cart (0)
+            Cart ({itemCount})
           </SheetTitle>
         </SheetHeader>
         {itemCount > 0 ? (
@@ -73,7 +73,7 @@ export default function Cart() {
             <SheetTrigger asChild>
               <Link
                 href='/customer/collections/all'
-                className='text-center transition-all text-sm text-muted-foreground text-blue-400'>
+                className='text-center underline transition-all text-sm text-muted-foreground text-blue-500 '>
                 Add items to your cart to checkout
               </Link>
             </SheetTrigger>
