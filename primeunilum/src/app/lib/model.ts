@@ -91,6 +91,7 @@ export type ProductsTable = {
   reviews?: number,
   quantity: number,
   category: string;
+  img: string;
 }
 
 export type Supplierstable = {

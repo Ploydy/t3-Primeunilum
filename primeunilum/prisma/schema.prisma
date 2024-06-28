@@ -28,6 +28,7 @@ model Products {
     reviews   Int?
     quantity  Int
     category  Category
+    img       String
 }
 
 enum Category {

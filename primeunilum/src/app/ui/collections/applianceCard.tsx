@@ -15,7 +15,7 @@ export default async function ApplianceCard() {
         <div key={product.id}>
           <li className="relative flex flex-row items-start border-2 rounded p-2 mt-2">
 
-            <Image src={hanabishi} alt="" className="p-4 ml-10 flex-shrink-0 shadow-lg rounded w-full sm:w-[10rem] xl:mb-2" width="1280" height="200" />
+            <Image src={product.img} alt="" className="p-4 ml-10 flex-shrink-0 shadow-lg rounded w-full sm:w-[10rem] xl:mb-2" width="1280" height="200" />
 
             <div className='flex flex-col justify-between mt-5'>
               <div className="sm:ml-6 xl:ml-6">

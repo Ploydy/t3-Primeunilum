@@ -19,6 +19,7 @@ export const productRouter = createTRPCRouter({
         reviews: true,
         quantity: true,
         category: true,
+        img: true
       },
     });
     const result: ProductsTable[] = products.map(p => ({
@@ -28,7 +29,8 @@ export const productRouter = createTRPCRouter({
       price: p.price,
       reviews: p.reviews,
       quantity: p.quantity,
-      category: p.category
+      category: p.category,
+      img: p.img
     }) as unknown as ProductsTable );
     return result;
   }),
