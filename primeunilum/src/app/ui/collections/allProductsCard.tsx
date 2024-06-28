@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from "next/image";
-import Aluminum from '../../../../public/hardware/aluminumPlates.jpg'
 import { api } from '~/trpc/server';
 import Link from 'next/link';
 
@@ -12,7 +11,7 @@ export default async function AllProductsCard() {
         <div key={product.id}>
           <li className="relative flex flex-row items-start border-2 rounded p-2 mt-2">
 
-            <Image src={Aluminum} alt="" className="p-4 ml-10 flex-shrink-0 shadow-lg rounded w-full sm:w-[10rem] xl:mb-2" width="1280" height="200" />
+            <Image src={product.img} alt="" className="p-4 ml-10 flex-shrink-0 shadow-lg rounded w-full sm:w-[10rem] xl:mb-2" width="1280" height="200" />
 
             <div className='flex flex-col justify-between mt-5'>
               <div className="sm:ml-6 xl:ml-6">

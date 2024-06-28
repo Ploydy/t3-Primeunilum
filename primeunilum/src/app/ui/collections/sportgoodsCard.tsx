@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from "next/image";
-import Aluminum from '../../../../public/sport goods/basketball.jpg'
 import { api } from '~/trpc/server';
 import Link from 'next/link';
 
@@ -16,12 +15,12 @@ export default async function SportGoodsCard() {
         <div key={product.id}>
           <li className="relative flex flex-row items-start border-2 rounded p-2 mt-2">
 
-            <Image src={Aluminum} alt="" className="p-4 ml-10 flex-shrink-0 shadow-lg rounded w-full sm:w-[10rem] xl:mb-2" width="1280" height="200" />
+            <Image src={product.img} alt="" className="p-4 ml-10 flex-shrink-0 shadow-lg rounded w-full sm:w-[10rem] xl:mb-2" width="1280" height="200" />
 
             <div className='flex flex-col justify-between mt-5'>
               <div className="sm:ml-6 xl:ml-6">
-                <h3 className="mb-1 text-slate-900 font-mono">
-                  <span className="mb-1 block text-sm leading-6 text-slate-600">{product.brandname}</span><Link href={`/customer/products/${product.name}`}>
+                <h3 className="mb-1 text-slate-900 uppercase font-mono">
+                  <span className="mb-1 block text-sm  leading-6 text-slate-600">{product.brandname}</span><Link href={`/customer/products/${product.name}`}>
                     {product.name}</Link>
                 </h3>
                 <div className="prose prose-slate prose-sm text-slate-600">

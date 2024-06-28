@@ -4,7 +4,6 @@
 
 import React from 'react'
 import Image from "next/image";
-import Aluminum from '../../../../public/hardware/aluminumPlates.jpg'
 import { api } from '~/trpc/server';
 import Link from 'next/link';
 

@@ -2,7 +2,6 @@
 /* eslint-disable react/jsx-no-undef */
 import React from 'react'
 import Image from 'next/image'
-import hanabishi from '../../../../public/appliance/appliancehanabishi_n.png'
 import Link from 'next/link'
 import { api } from '~/trpc/server'
 
