@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react'
-import CustomerCard from '~/app/ui/cards/customer'
-import CxTable from '~/app/ui/customers/table'
+import CxTable from '~/app/ui/tables/CustomerTable'
 import { CreateInvoice } from '~/app/ui/invoices/buttons'
 import Search from '~/app/ui/search'
 import { InvoicesTableSkeleton } from '~/app/ui/skeletons'
