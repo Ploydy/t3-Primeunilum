@@ -46,7 +46,7 @@ model Suppliers {
     name    String
     email   String
     contact Int
-    status  Status
+    status  String
 
     @@index([email, name])
 }

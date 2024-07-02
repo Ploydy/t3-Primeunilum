@@ -99,6 +99,6 @@ export type Supplierstable = {
   name: string;
   email: string;
   contact: number;
-  status: 'active' | 'pause' | 'terminated';
+  status: string;
 }
 
