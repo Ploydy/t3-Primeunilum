@@ -4,6 +4,8 @@ import { GeistSans } from "geist/font/sans";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import Footer from "./ui/landingpage/footer";
+import Header from "./ui/customers/header";
+import Nav from "./ui/landingpage/nav";
 
 export const metadata = {
   title: "Primeunilum",
@@ -20,10 +22,13 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
         <TRPCReactProvider>
-          {children}
           <div>
-            <Footer />
+            {/* <div className="h-24 bg-gray-200"><Nav /></div> */}
+            <div>
+              {children}
+            </div>
           </div>
+          <Footer />
         </TRPCReactProvider>
       </body>
     </html>
